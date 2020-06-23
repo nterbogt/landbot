@@ -32,25 +32,25 @@ class LandbotSettings extends ConfigFormBase {
 
     $form['enabled'] = [
       '#type' => 'checkbox',
-      '#title' => 'Enable Landbot integration',
-      '#description' => 'Abilitiy to quickly enable and disable Landbot integration',
+      '#title' => $this->t('Enable Landbot integration'),
+      '#description' => $this->t('Abilitiy to quickly enable and disable Landbot integration.'),
       '#default_value' => $this->configFactory->get('landbot.settings')->get('enabled'),
     ];
 
     $form['index_url'] = [
       '#type' => 'textfield',
-      '#title' => t('Index URL'),
-      '#description' => t('Enter the index URL that landbot uses to create popups or livechat integration.'),
+      '#title' => $this->t('Index URL'),
+      '#description' => $this->t('Enter the index URL that landbot uses to create popups or livechat integration.'),
       '#default_value' => $this->configFactory->get('landbot.settings')->get('index_url'),
     ];
 
     $form['widget'] = [
       '#type' => 'select',
-      '#title' => t('Widget'),
-      '#description' => t('The supported widgets from the Landbot API..'),
+      '#title' => $this->t('Widget'),
+      '#description' => $this->t('The supported widgets from the Landbot API.'),
       '#options' => [
-        'popup' => 'Popup',
-        'livechat' => 'Livechat',
+        'popup' => $this->t('Popup'),
+        'livechat' => $this->t('Livechat'),
       ],
       '#default_value' => $this->configFactory->get('landbot.settings')->get('widget'),
     ];
