@@ -1,0 +1,5 @@
+landbot.settings:
+  route_name: landbot.settings
+  title: 'Landbot'
+  description: 'Alter settings and mange your Landbot integration.'
+  parent: system.admin_config_system

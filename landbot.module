@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Integrates Landbot.io in a Drupal site.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function landbot_page_attachments(array &$attachments) {
+  $settings = \Drupal::config('landbot.settings');
+
+  // Add #cache metadata.
+  \Drupal::service('renderer')->addCacheableDependency($attachments, $settings);
+
+  if (!$settings->get('enabled')) {
+    return;
+  }
+
+  $attachments['#attached'] = [
+    'drupalSettings' => [
+      'landbot' => [
+        'index' => $settings->get('index_url'),
+      ],
+    ],
+    'library' => ['landbot/' . $settings->get('widget')],
+  ];
+}

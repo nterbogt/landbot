@@ -1,0 +1,28 @@
+landbot:
+  remote: //static.landbot.io/landbot-widget/landbot-widget-1.0.0.js
+  version: 1.0
+  license:
+    name: MIT
+    gpl-compatible: true
+  js:
+    //static.landbot.io/landbot-widget/landbot-widget-1.0.0.js: { type: external, minified: true, preprocess: false, attributes: { SameSite: "None; Secure" }  }
+
+livechat:
+  version: VERSION
+  js:
+    js/livechat.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - landbot/landbot
+
+popup:
+  version: VERSION
+  js:
+    js/popup.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - landbot/landbot

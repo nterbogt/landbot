@@ -1,0 +1,7 @@
+landbot.settings:
+  path: '/admin/config/system/landbot'
+  defaults:
+    _title: 'Landbot'
+    _form: '\Drupal\landbot\Form\LandbotSettings'
+  requirements:
+    _permission: 'administer landbot'
