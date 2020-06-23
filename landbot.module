@@ -21,7 +21,7 @@ function landbot_page_attachments(array &$attachments) {
   $attachments['#attached'] = [
     'drupalSettings' => [
       'landbot' => [
-        'index' => $settings->get('index_url'),
+        'indexUrl' => $settings->get('index_url'),
       ],
     ],
     'library' => ['landbot/' . $settings->get('widget')],
