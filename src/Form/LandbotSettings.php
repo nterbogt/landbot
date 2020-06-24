@@ -34,14 +34,14 @@ class LandbotSettings extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Enable Landbot integration'),
       '#description' => $this->t('Abilitiy to quickly enable and disable Landbot integration.'),
-      '#default_value' => $this->configFactory->get('landbot.settings')->get('enabled'),
+      '#default_value' => $this->config('landbot.settings')->get('enabled'),
     ];
 
     $form['index_url'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Index URL'),
       '#description' => $this->t('Enter the index URL that landbot uses to create popups or livechat integration.'),
-      '#default_value' => $this->configFactory->get('landbot.settings')->get('index_url'),
+      '#default_value' => $this->config('landbot.settings')->get('index_url'),
     ];
 
     $form['widget'] = [
@@ -52,7 +52,7 @@ class LandbotSettings extends ConfigFormBase {
         'popup' => $this->t('Popup'),
         'livechat' => $this->t('Livechat'),
       ],
-      '#default_value' => $this->configFactory->get('landbot.settings')->get('widget'),
+      '#default_value' => $this->config('landbot.settings')->get('widget'),
     ];
 
     return parent::buildForm($form, $form_state);

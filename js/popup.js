@@ -1,8 +1,14 @@
 (function ($, Drupal, drupalSettings) {
 
+    Drupal.landbot = {};
+
     Drupal.behaviors.landbotPopup = {
         attach: function (context, settings) {
-            var myLandbot = new LandbotPopup({
+            if (Drupal.landbot.widget !== undefined) {
+                return;
+            }
+
+            Drupal.landbot.widget = new LandbotPopup({
                 index: settings.landbot.indexUrl,
             });
         }
